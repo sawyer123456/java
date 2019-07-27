@@ -1,0 +1,15 @@
+import java.io.FileReader;
+
+public class TRY {
+public static void main(String[] args) {
+	FileReader reader=null;
+	try {
+      reader =new FileReader("D://a.txt");
+	}
+	catch(Exception e) {
+	e.printStackTrace();
+	}final{
+		reader.close;
+	}
+}
+}

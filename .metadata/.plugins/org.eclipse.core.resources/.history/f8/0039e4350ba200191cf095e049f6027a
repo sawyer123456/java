@@ -1,0 +1,16 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import java.util.Map;
+
+public class MAPs {
+public static void main(String[] args) {
+	Map<Integer,Object> m1 =new HashMap<>();
+    
+	List s =new ArrayList();
+	s.add("ss");
+	m1.put(1,s);
+	System.out.println(m1);
+}
+
+}

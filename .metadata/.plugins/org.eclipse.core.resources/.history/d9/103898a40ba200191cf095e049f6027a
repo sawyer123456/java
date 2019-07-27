@@ -1,0 +1,20 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class MAPs {
+public static void main(String[] args) {
+	Map<Integer,Object> m1 =new HashMap<>();
+    
+	List<String> s =new ArrayList();
+	
+	s = ["ss","sw","se"];
+	s.add("ss");
+	s.add("s2");
+	s.add("33"); 
+	m1.put(1,s);
+	System.out.println(m1);
+}
+
+}

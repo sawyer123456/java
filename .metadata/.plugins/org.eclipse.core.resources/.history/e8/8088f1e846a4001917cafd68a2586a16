@@ -1,0 +1,39 @@
+package Thread;
+
+public class TerminateThread implements Runnable {
+	boolean flag = true;
+	String name;
+
+	public TerminateThread(String name) {
+
+		this.name = name;
+	}
+
+	@Override
+	public void run() {
+		int i = 0;
+		while (flag) {
+			System.out.println(name + "-->" + i++);
+		}
+
+	}
+
+	public void terminate_() {
+		this.flag = false;
+	}
+
+	public static void main(String[] args) {
+		TerminateThread tr =new TerminateThread("ÖÜ½ÜÂ×");
+		new Thread(tr).start();
+		
+		for(int i=0;i<100;i++) {
+			if(i==88) {
+				tr.terminate_();
+				System.out.println("tt game");
+			}
+			System.out.println("main"+i);
+		}
+		
+	}
+
+}

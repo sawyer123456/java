@@ -1,0 +1,36 @@
+package Thread;
+
+public class DeadLock {
+public static void main(String[] args) {
+	
+}
+}
+
+class Lipstick{
+	
+}
+
+class Mirror{
+	
+}
+class MakeUp extends Thread {
+	static Lipstick lipstick =new Lipstick();
+	static Mirror mirror =new Mirror();
+	
+	
+	int choice;
+	
+	String girl;
+	public MakeUp(int choice,String girl) {
+		this.choice=choice;
+		this.girl=girl;
+	}
+	@Override
+	public void run() {
+
+	}
+	private void markUp;
+	
+	
+	
+}

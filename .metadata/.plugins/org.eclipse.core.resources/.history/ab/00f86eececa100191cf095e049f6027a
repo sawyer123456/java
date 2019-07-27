@@ -1,0 +1,19 @@
+
+public class gennericss {
+	public static void main(String[] args) {
+
+	}
+}
+
+class MyCollection {
+
+	Object[] objs = new Object[5];
+
+	void set(Object obj, int index) {
+		objs[index] = obj;
+	}
+
+	public Object get(int index ) {
+	 return	objs[index];
+	}
+}

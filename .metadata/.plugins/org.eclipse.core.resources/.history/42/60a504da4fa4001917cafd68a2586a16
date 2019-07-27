@@ -1,0 +1,72 @@
+package Thread;
+
+import java.util.Date;
+
+public class Web12306 implements Runnable {
+	int ticketNum = 100;
+
+	@Override
+	public void run() {
+		while (true) {
+			if (ticketNum < 0) {
+				break;
+			}
+			try {
+				Thread.sleep(200);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println(Thread.currentThread().getName() + "-->" + ticketNum--);
+		}
+	}
+
+	public static void main(String[] args) {
+
+		Web12306 w = new Web12306();
+		System.out.println(Thread.currentThread().getName());
+		new Thread(w, "¬Ì‘∆").start();
+		new Thread(w, "≈£‘∆").start();
+		new Thread(w, "∞¢¿Ô‘∆").start();
+
+		num n = new num();
+		new Thread(n, "number").start();
+
+	}
+}
+
+class num implements Runnable {
+	int nums = 10;
+
+	@Override
+	public void run() {
+		while (true) {
+			if (nums < 0) {
+				break;
+			}
+			try {
+				Thread.sleep(1000);
+				System.out.println(Thread.currentThread().getName() + "-->" + nums--);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+
+	}
+
+}
+
+class Timede implements Runnable {
+	Date endTime = new Date(System.currentTimeMillis() + 1000 * 10);
+	long end = endTime.getTime();
+
+	@Override
+	public void run() {
+		while (true) {
+
+		}
+	}
+
+}

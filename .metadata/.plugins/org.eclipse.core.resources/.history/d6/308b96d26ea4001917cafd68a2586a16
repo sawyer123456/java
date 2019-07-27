@@ -1,0 +1,74 @@
+package Thread;
+
+/**
+ * 线程安全，Synchronize
+ * 
+ * @author Administrator
+ *
+ */
+public class Safe12306 {
+
+	public static void main(String[] args) {
+		// 多个代理
+		safe w = new safe();
+		System.out.println(Thread.currentThread().getName());
+		new Thread(w, "马云").start();
+		new Thread(w, "牛云").start();
+		new Thread(w, "阿里云").start();
+
+	}
+}
+
+class safe implements Runnable {
+	// 一份资源
+	int ticketNum = 100;
+	boolean flag = true;
+
+	@Override
+	// 加上synchronized 后就保证了一次只有一个人读数据
+	public void run() {
+		while (flag) {
+			
+			test2();
+		}
+	}
+
+	public void test() {
+		synchronized (this) {
+			//synchronized ((Integer)ticketNum) { 
+			//锁一个不变的对象，不是内容不变，而是地址不变
+			if (ticketNum <= 0) {
+				flag = false;
+				return;
+			}
+			try {
+				Thread.sleep(20);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println(Thread.currentThread().getName() + "-->" + ticketNum--);
+		}
+	}
+	
+	public void test2() {
+		if (ticketNum <= 0) {  //考虑有没有票
+			flag = false;
+		    return;
+			}
+		synchronized (this) {		
+			if (ticketNum <= 0) {
+				flag = false;
+				return;
+			}
+			try {
+				Thread.sleep(20);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println(Thread.currentThread().getName() + "-->" + ticketNum--);
+		}
+	}
+
+}

@@ -1,0 +1,18 @@
+package Thread;
+
+public class Priority {
+	private void mian() {
+		// TODO Auto-generated method stub
+
+	}
+}
+
+class pri implements Runnable {
+
+	@Override
+	public void run() {
+		System.out.println(Thread.currentThread().getName() + "----->" + Thread.currentThread().getPriority());
+
+	}
+
+}

@@ -1,0 +1,25 @@
+package Thread;
+
+public class TerminateThread implements Runnable{
+	boolean flag = true;
+	String name ;
+	
+	
+	
+	
+
+
+
+
+
+@Override
+public void run() {
+	// TODO Auto-generated method stub
+	
+}
+
+
+public static void main(String[] args) {
+	
+}
+}

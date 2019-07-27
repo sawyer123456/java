@@ -1,0 +1,26 @@
+package Thread;
+
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MaximizeAction;
+
+public class Priority {
+	public static void main(String[] args) {
+		pri p =new pri();
+		new Thread(p,"adidas").start();
+		new Thread(p,"adidas").setPriority(Thread.MAX_PRIORITY);
+		new Thread(p,"nike").start();
+		new Thread(p,"nike").setPriority(Thread.MAX_PRIORITY-4);
+		new Thread(p,"puma").start();
+		new Thread(p,"puma").setPriority(Thread.MAX_PRIORITY-3);
+		new Thread(p,"anta").start();
+	}
+}
+
+class pri implements Runnable {
+
+	@Override
+	public void run() {
+		System.out.println(Thread.currentThread().getName() + "----->" + Thread.currentThread().getPriority());
+
+	}
+
+}

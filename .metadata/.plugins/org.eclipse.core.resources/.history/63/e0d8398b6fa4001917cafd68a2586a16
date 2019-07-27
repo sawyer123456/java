@@ -1,0 +1,19 @@
+package Thread;
+
+public class Cinema {
+public static void main(String[] args) {
+	
+}
+}
+
+class CinemaR{
+	int available;
+	String name ;
+	
+	public CinemaR(int available, String name) {
+		
+		this.available = available;
+		this.name = name;
+	}
+	
+}

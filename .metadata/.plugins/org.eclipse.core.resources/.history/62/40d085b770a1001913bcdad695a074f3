@@ -1,0 +1,18 @@
+import java.io.File;
+
+public class printFiletree {
+	public static void main(String[] args) {
+		File f= new File("F:\\KwDownload");
+		printFile(f);
+	}
+
+	static void printFile(File file) {
+		System.out.println(file.getName());
+		if(file.isDirectory()) {
+			File[] files =file.listFiles();
+			for(File temp:files) {
+				printFile(temp);
+			}
+ 		}
+	}
+}

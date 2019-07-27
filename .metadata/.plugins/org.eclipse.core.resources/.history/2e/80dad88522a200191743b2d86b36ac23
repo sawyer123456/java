@@ -1,0 +1,14 @@
+package IO;
+
+import java.io.File;
+import java.io.IOException;
+
+public class FILE02 {
+public static void main(String[] args) throws IOException {
+	
+	File sc =new File("I:\\JAVA\\123\\src\\io.txt");
+	boolean flag =sc.createNewFile();
+	System.out.println(flag);
+	
+}
+}

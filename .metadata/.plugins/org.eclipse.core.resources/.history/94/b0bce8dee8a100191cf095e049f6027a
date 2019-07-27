@@ -1,0 +1,21 @@
+import java.io.FileReader;
+import java.io.IOException;
+
+public class throwsss {
+public static void main(String[] args) {
+	FileReader reader=null;
+	try {
+      reader =new FileReader("D://a.txt");
+	}
+	catch(Exception e) {
+	e.printStackTrace();
+	}finally{
+		try {
+			reader.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
+}

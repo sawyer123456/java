@@ -1,0 +1,28 @@
+package IO;
+
+import java.io.File;
+
+public class PrintFileName {
+
+	public static void main(String[] args) {
+		String[] src =new File("d:/");
+		int index =0;
+		
+	}
+	
+	
+	public static void printName(String src ,Integer i) {
+		if(null== src ||!src.isEmpty()) {
+			return;
+		}
+		
+		else if(src.isDirectory()) {
+			System.out.println(src);
+			printName(src, i++);
+		}
+		for(Integer t:i) {
+			System.out.println("-");
+		}
+		
+	}
+}

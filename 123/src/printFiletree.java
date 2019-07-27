@@ -1,0 +1,24 @@
+import java.io.File;
+
+//遍历当前目录的所有子目录
+public class printFiletree {
+	public static void main(String[] args) {
+		File f= new File("F:\\小果联盟 解压密码123");
+		printFile(f,0);
+		System.out.println("总共遍历"+k+"次");
+	}
+			static int k=0;
+	static void printFile(File file,int index) { 
+		for(int i =0;i<index;i++) {
+			System.out.print("-"); //printin要换行
+		}		
+		System.out.println(file.getName());
+		if(file.isDirectory()) {
+			File[] files =file.listFiles();
+			for(File temp:files) {          //递归
+				printFile(temp,index+1);
+				k++;
+			}
+ 		}
+	}
+}

@@ -1,0 +1,12 @@
+package IO;
+
+import java.io.File;
+
+public class FILE02 {
+public static void main(String[] args) {
+	
+	File sc =new File("I:\\JAVA\\123\\src");
+	boolean flag =sc.createNewFile();
+	
+}
+}

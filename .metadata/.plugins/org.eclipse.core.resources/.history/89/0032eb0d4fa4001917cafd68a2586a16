@@ -1,0 +1,57 @@
+package Thread;
+
+public class Web12306 implements Runnable {
+	int ticketNum = 100;
+
+	@Override
+	public void run() {
+		while (true) {
+			if (ticketNum < 0) {
+				break;
+			}
+			try {
+				Thread.sleep(200);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println(Thread.currentThread().getName() + "-->" + ticketNum--);
+		}
+	}
+
+	public static void main(String[] args) {
+
+		Web12306 w = new Web12306();
+		System.out.println(Thread.currentThread().getName());
+		new Thread(w, "ÂíÔÆ").start();
+		new Thread(w, "Å£ÔÆ").start();
+		new Thread(w, "°¢ÀïÔÆ").start();
+
+		num n = new num();
+		new Thread(n, "Êı×Ö").start();
+
+	}
+}
+
+class num implements Runnable {
+	int nums = 10;
+
+	@Override
+	public void run() {
+		while (true) {
+			if (nums < 0) {
+				break;
+			}
+			try {
+				Thread.sleep(1000);
+				System.out.println(Thread.currentThread().getName() + "-->" + nums--);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+
+	}
+
+}

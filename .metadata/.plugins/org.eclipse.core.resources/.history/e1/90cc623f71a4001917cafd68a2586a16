@@ -1,0 +1,55 @@
+package Thread;
+
+public class Cinema {
+	public static void main(String[] args) {
+		CinemaR c = new CinemaR(2, "sxt");
+		new Thread(new Coustomer(c, 2), "小明").start();
+		new Thread(new Coustomer(c, 1), "小花").start();
+	}
+}
+
+class Coustomer implements Runnable {
+	CinemaR cinema;
+	int seats;
+
+	public Coustomer(CinemaR cinema, int seats) {
+
+		this.cinema = cinema;
+		this.seats = seats;
+	}
+
+	@Override
+	public void run() {
+		synchronized (cinema) {
+
+			boolean flag = cinema.Booktickets(seats);
+			if (flag) {
+				System.out.println("出票成功" + Thread.currentThread().getName());
+			} else {
+				System.out.println("出票失败" + Thread.currentThread().getName());
+			}
+
+		}
+	}
+
+}
+
+class CinemaR {
+	int available;
+	String name;
+
+	public CinemaR(int available, String name) {
+
+		this.available = available;
+		this.name = name;
+	}
+
+	public boolean Booktickets(int seats) {
+		System.out.println("可用位置为：" + available);
+		if (seats > available) {
+			return false;
+		}
+		available -= seats;
+		return true;
+	}
+}

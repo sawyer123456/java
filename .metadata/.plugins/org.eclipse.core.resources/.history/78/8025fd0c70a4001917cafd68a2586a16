@@ -1,0 +1,28 @@
+package Thread;
+
+public class Cinema {
+public static void main(String[] args) {
+	
+}
+}
+
+class CinemaR{
+	int available;
+	String name ;
+	
+	public CinemaR(int available, String name) {
+		
+		this.available = available;
+		this.name = name;
+	}
+	public boolean Booktickets(int seats) {
+		System.out.println("可用位置为："+available);
+		if(seats>available) {
+			return false;
+		}
+		available -=seats;
+		return true;
+	}
+}
+
+

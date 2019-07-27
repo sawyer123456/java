@@ -1,0 +1,21 @@
+import java.io.File;
+
+public class printFiletree {
+	public static void main(String[] args) {
+		File f= new File("F:\\KwDownload");
+		printFile(f,0);
+	}
+
+	static void printFile(File file,int index) {
+		for(int i =0;i<index;i++) {
+			System.out.println("-");
+		}		
+		System.out.println(file.getName());
+		if(file.isDirectory()) {
+			File[] files =file.listFiles();
+			for(File temp:files) {
+				printFile(temp,index+1);
+			}
+ 		}
+	}
+}

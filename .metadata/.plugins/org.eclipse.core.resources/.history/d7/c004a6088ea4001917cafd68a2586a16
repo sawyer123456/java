@@ -1,0 +1,24 @@
+package Thread;
+
+/**
+ * 演员表演，观众看
+ * 演员停止，观众等待
+ * @author Administrator
+ *
+ */
+public class xinghaodeng {
+public static void main(String[] args) {
+	
+}
+}
+
+class Tv{
+	String voice;	
+	public void Player(){
+		System.out.println("表演了"+this.voice);
+	}
+	public void Watcher(){
+		System.out.println("听到了"+this.voice);
+	}
+	
+}

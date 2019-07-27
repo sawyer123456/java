@@ -1,0 +1,49 @@
+package Thread;
+
+public class smoke {
+	public static void main(String[] args) {
+		new Thread(new Father()).start();
+		
+		try {
+			new Thread(()->{				
+				System.out.println("爸爸接过烟，把零钱给了儿子");
+			}).join();
+		} catch (InterruptedException e) {
+			System.out.println("儿子丢了，找儿子去");
+			e.printStackTrace();
+		}
+		
+	}
+}
+
+class Father implements Runnable {
+	@Override
+	public void run() {
+		System.out.println("想抽烟。。");
+		System.out.println("没烟了，叫儿子买烟");
+		Son s = new Son();
+		new Thread(s).start();
+	}
+
+}
+
+class Son implements Runnable {
+
+	@Override
+	public void run() {
+		System.out.println("接过钱，买烟去了。");
+		System.out.println("路上有个游戏厅，进去玩了10秒");
+		for (int j = 0; j < 10; j++) {
+			try {
+				Thread.sleep(1000);
+				System.out.println("玩了" + j + "秒");
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		System.out.println("出了游戏厅，买烟去。。");
+
+	}
+
+}

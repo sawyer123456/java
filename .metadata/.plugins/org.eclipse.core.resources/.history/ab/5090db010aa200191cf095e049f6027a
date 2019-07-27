@@ -1,0 +1,11 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class MAPs {
+public static void main(String[] args) {
+	Map<Integer,Object> m1 =new HashMap<>();
+	m1.put(1,"ee");
+	System.out.println(m1);
+}
+
+}

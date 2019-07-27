@@ -1,0 +1,87 @@
+package Thread;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class Web12306 implements Runnable {
+	int ticketNum = 100;
+
+	@Override
+	public void run() {
+		while (true) {
+			if (ticketNum < 0) {
+				break;
+			}
+			try {
+				Thread.sleep(200);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println(Thread.currentThread().getName() + "-->" + ticketNum--);
+		}
+	}
+
+	public static void main(String[] args) {
+
+		Web12306 w = new Web12306();
+		System.out.println(Thread.currentThread().getName());
+		new Thread(w, "ÂíÔÆ").start();
+		new Thread(w, "Å£ÔÆ").start();
+		new Thread(w, "°¢ÀïÔÆ").start();
+
+		num n = new num();
+		new Thread(n, "number").start();
+		
+		Timede td= new Timede();
+		new Thread().start();
+
+	}
+}
+
+class num implements Runnable {
+	int nums = 10;
+
+	@Override
+	public void run() {
+		while (true) {
+			if (nums < 0) {
+				break;
+			}
+			try {
+				Thread.sleep(1000);
+				System.out.println(Thread.currentThread().getName() + "-->" + nums--);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+
+	}
+
+}
+
+class Timede implements Runnable {
+	Date endTime = new Date(System.currentTimeMillis() + 1000 * 10);
+	long end = endTime.getTime();
+
+	@Override
+	public void run() {
+		while (true) {
+			System.out.println(new SimpleDateFormat("mm:ss").format(endTime));
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			endTime = new Date(endTime.getTime() - 1000);
+			if (end - 10000 > endTime.getTime()) {
+				break;
+			}
+
+		}
+	}
+
+}

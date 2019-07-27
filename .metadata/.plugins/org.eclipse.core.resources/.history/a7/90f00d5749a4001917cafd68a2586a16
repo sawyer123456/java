@@ -1,0 +1,26 @@
+package Thread;
+
+public class Web12306 implements Runnable {
+	int ticketNum=100;
+	
+	
+	@Override
+	public void run() {
+	while(true) {
+		if(ticketNum<0) {
+			break;
+		}
+	}try {
+		Thread.sleep(200);
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	System.out.println(Thread.currentThread().getName()+"-->"+ticketNum);
+		
+	}
+
+	public static void main(String[] args) {
+
+	}
+}

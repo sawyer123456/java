@@ -1,0 +1,19 @@
+package IO;
+
+import java.io.File;
+
+public class PrintFileName {
+
+	public static void main(String[] args) {
+		File src =new File("d:/");
+		
+	}
+	
+	
+	public static void printName(String src ,int index) {
+		if(null== src ||!src.isEmpty()) {
+			return;
+		}
+		
+	}
+}

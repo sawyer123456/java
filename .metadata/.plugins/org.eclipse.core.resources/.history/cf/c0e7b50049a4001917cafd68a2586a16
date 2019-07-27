@@ -1,0 +1,18 @@
+package Thread;
+
+public class Web12306 implements Runnable {
+	int ticketNum=100;
+	
+	
+	@Override
+	public void run() {
+	while(true) {
+		if(ticketNum)
+	}
+		
+	}
+
+	public static void main(String[] args) {
+
+	}
+}

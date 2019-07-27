@@ -1,0 +1,22 @@
+package Thread;
+
+public class Yiled implements Runnable {
+	int i = 100;
+
+	@Override
+	public void run() {
+		for (int j = 0; j < i; j++) {
+			if (i % 20 == 0) {
+				Thread.yield();
+				System.out.println(Thread.currentThread().getName() + "ÀñÈÃ-->");
+			}
+		}
+
+	}
+
+	public static void main(String[] args) {
+		new Thread(new Yiled(),"ÐÐÈË").start();;
+		new Thread(new Yiled(),"Æû³µ").start();;
+	}
+
+}

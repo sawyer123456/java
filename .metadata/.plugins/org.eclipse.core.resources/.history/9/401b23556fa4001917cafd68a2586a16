@@ -1,0 +1,9 @@
+package Thread;
+
+public class HappyCinema {
+public static void main(String[] args) {
+	
+}
+}
+
+class Cinema

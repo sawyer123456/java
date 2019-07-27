@@ -1,0 +1,18 @@
+package Thread;
+
+public class Priority {
+	public static void main(String[] args) {
+		pri p =new pri();
+		new Thread(p,"adidas").start();
+	}
+}
+
+class pri implements Runnable {
+
+	@Override
+	public void run() {
+		System.out.println(Thread.currentThread().getName() + "----->" + Thread.currentThread().getPriority());
+
+	}
+
+}

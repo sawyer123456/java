@@ -1,0 +1,23 @@
+package IO;
+
+import java.io.File;
+import java.io.IOException;
+
+public class FILE02 {
+public static void main(String[] args) throws IOException {
+	
+	File sc =new File("I:\\JAVA\\123\\src\\io.txt");
+	boolean flag =sc.createNewFile();
+	System.out.println(flag);
+	
+	boolean flag2=sc.delete();
+	System.out.println(flag2);
+	File scc =new File("I:\\JAVA\\123");
+	boolean fi =scc.mkdir();
+	System.out.println(fi);
+	boolean f2 =scc.mkdirs();
+	System.out.println(f2);
+	boolean f3 =scc.listFiles(); 
+	System.out.println(f2);
+}
+}

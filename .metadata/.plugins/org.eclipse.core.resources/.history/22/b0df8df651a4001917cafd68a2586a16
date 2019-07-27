@@ -1,0 +1,17 @@
+package Thread;
+
+public class Yiled implements Runnable{	
+int i =100;
+@Override
+public void run() {
+	if(i%20==0) {
+		Thread.yield();
+	}
+	System.out.println(Thread.currentThread().getName()+"ÀñÈÃ-->");
+	
+}
+public static void main(String[] args) {
+	
+}
+
+}

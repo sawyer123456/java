@@ -1,0 +1,40 @@
+package Thread;
+
+/**
+ * 演员表演，观众看
+ * 演员停止，观众等待
+ * @author Administrator
+ *
+ */
+public class xinghaodeng {
+public static void main(String[] args) {
+	
+}
+}
+
+class Tv{
+	String voice;	
+	boolean flag=true;
+	public void Player(String voice){
+		this.voice=voice;
+	}
+	public void Watcher(String voice){
+		this.voice=voice;
+	}
+		
+}
+
+class Player extends Thread{
+	@Override
+	public void run() {
+		Tv tv=new Tv();
+		tv.flag=false;
+		
+	}
+}
+class Watcher extends Thread{
+	@Override
+	public void run() {
+		
+	}
+}

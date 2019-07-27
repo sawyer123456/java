@@ -1,0 +1,13 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class MAPs {
+public static void main(String[] args) {
+	Map<Integer,Object> m1 =new HashMap<>();
+    
+	List[] s =new ArrayList[];
+	m1.put(1,{"2","2"});
+	System.out.println(m1);
+}
+
+}

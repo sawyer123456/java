@@ -1,0 +1,25 @@
+
+public class gennericss {
+	public static void main(String[] args) {
+		MyCollection<String> mc = new MyCollection<>();
+		mc.set("swt", 0);
+		mc.set(99999, 6);
+
+		String a = mc.get(0);
+		System.out.println(a);
+		
+	}
+}
+
+class MyCollection <E> {
+
+	Object[] objs = new Object[5];
+
+	public void set(E e, int index) {
+		objs[index] = e;
+	}
+
+	public E get(int index) {
+		return (E)objs[index];
+	}
+}

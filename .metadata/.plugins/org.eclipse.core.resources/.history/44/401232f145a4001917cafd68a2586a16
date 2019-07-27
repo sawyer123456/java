@@ -1,0 +1,7 @@
+package Thread;
+
+public class TerminateThread {
+public static void main(String[] args) {
+	
+}
+}

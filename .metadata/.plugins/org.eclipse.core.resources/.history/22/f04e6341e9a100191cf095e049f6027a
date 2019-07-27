@@ -1,0 +1,15 @@
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class throwss {
+public static void main(String[] args) throws IOException {
+	FileReader reader=null;
+	
+      reader =new FileReader("D://a.txt");
+	System.out.println(reader);
+	
+			reader.close();
+		
+}
+}

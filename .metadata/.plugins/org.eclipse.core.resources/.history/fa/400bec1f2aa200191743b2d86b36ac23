@@ -1,0 +1,29 @@
+package IO;
+
+import java.io.File;
+
+public class PrintFileName {
+
+	public static void main(String[] args) {
+		File src = new File("D:\\");
+		int index = 0;
+		printName(src, 0);
+
+	}
+
+	private static void printName(File src, int iss) {
+		
+		if(null== src ||!src.exists()) {
+			return;
+		}
+		
+		else if(src.isDirectory()) {
+			for(File s:src.listFiles()) {
+				System.out.print("-");
+				
+			}
+			System.out.println(src.getName());			
+			printName(src, iss++);		
+		}
+	}
+}

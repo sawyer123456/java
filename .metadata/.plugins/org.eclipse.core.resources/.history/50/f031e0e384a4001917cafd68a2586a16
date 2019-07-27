@@ -1,0 +1,25 @@
+package Thread;
+
+public class DeadLock {
+public static void main(String[] args) {
+	
+}
+}
+
+class Lipstick{
+	
+}
+
+class Mirror{
+	
+}
+class MakeUp extends Thread {
+	
+	int choice;
+	
+	String girl;
+	public MakeUp(int choice) {
+		this.choice=choice;
+		this.girl=girl;
+	}
+}

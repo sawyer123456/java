@@ -1,0 +1,29 @@
+package Thread;
+
+public class smoke {
+public static void main(String[] args) {
+	new Thread().start();
+}
+}
+
+class Father implements Runnable{
+	@Override
+	public void run() {
+		System.out.println("想抽烟。。");
+		System.out.println("没烟了，叫儿子买烟");
+		Son s=new Son();
+		 new Thread(s).start();
+	}
+	
+}
+class Son implements Runnable{
+	int time =10;
+	@Override
+	public void run() {
+		System.out.println("接过钱，买烟去了。");
+		System.out.println("路上有个游戏厅，进去玩了10秒");
+		System.out.println("");
+		
+	}
+	
+}

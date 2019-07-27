@@ -1,0 +1,22 @@
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class DAta {
+public static void main(String[] args) throws ParseException {
+	
+	
+	DateFormat df=new SimpleDateFormat("yyyy-mm-dd");
+	String str =df.format(new Date(5555555));
+	String str2 =df.format(new Date());
+	DateFormat str3 = new SimpleDateFormat("D");
+	Date date =df.parse("1938-05-16");
+	
+	System.out.println(str3.toString());
+	System.out.println(date);
+	System.out.println(str);
+	System.out.println(str2);
+	
+}
+}
